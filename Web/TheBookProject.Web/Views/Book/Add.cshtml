@@ -1,0 +1,129 @@
+﻿@model TheBookProject.Web.ViewModels.Book.AddBookViewModel
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">
+            Добави нова книга за купуване
+        </h1>
+        <ol class="breadcrumb">
+            <li>@Html.ActionLink("Начало", "Home", "Home", new { area = string.Empty }, null)</li>
+            <li class="active">Добави книга</li>
+        </ol>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-7">
+        <br />
+        @using (Html.BeginForm("Add", "Book", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+            <div class="col-md-10">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Image, new { @class = "col-md-3 control-label" })
+                    <div class="col-md-9">
+                        @Html.TextBoxFor(m => m.Image, new { @class = "form-control", id = "cover-image" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Title, new { @class = "col-md-3 control-label" })
+                    <div class="col-md-9">
+                        @Html.TextBoxFor(m => m.Title, new { @class = "form-control", id = "title" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Author, new { @class = "col-md-3 control-label" })
+                    <div class="col-md-9">
+                        @Html.TextBoxFor(m => m.Author, new { @class = "form-control", id = "author" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Price, new { @class = "col-md-3 control-label" })
+                    <div class="col-md-9">
+                        @Html.TextBoxFor(m => m.Price, new { @class = "form-control", id = "price" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.PublishingHouse, new { @class = "col-md-3 control-label" })
+                    <div class="col-md-9">
+                        @Html.TextBoxFor(m => m.PublishingHouse, new { @class = "form-control", id = "publishingHouse" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Series, new { @class = "col-md-3 control-label" })
+                    <div class="col-md-9">
+                        @Html.TextBoxFor(m => m.Series, new { @class = "form-control", id = "series" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-9">
+                        <input type="submit" class="btn btn-primary" value="Йей, нова книга! Добавяй!" />
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="col-md-5">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div>
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <img src="http://4.bp.blogspot.com/_CHG2GRbeET8/SS3f-tcSNiI/AAAAAAAAJEk/qVdRYu1MLMs/s320/missing-715826.gif"
+                                 style="width: 220px; height: 300px; border: 2px solid gold;" id="cover-image-visual" />
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <span id="title-visual">-</span>
+                    </div>
+                    <div class="row text-center">
+                        <span id="author-visual">-</span>
+                    </div>
+                    <div class="row text-center" style="background-color: limegreen;">
+                        <span id="price-visual">00.00лв</span>
+                    </div>
+                    <div class="row text-center" style="background-color: #F6182A;">
+                        <span id="publishingHouse-visual">-</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section addBookScript {
+    <script>
+        $('#cover-image').change(function () {
+            var image = $(this).val();
+            $('#cover-image-visual').attr('src', image);
+        });
+
+        $('#title').change(function () {
+            var title = $(this).val();
+            $('#title-visual').text(title);
+        });
+
+        $('#author').change(function () {
+            var author = $(this).val();
+            $('#author-visual').text(author);
+        });
+
+        $('#publishingHouse').change(function () {
+            var publishingHouse = $(this).val();
+            $('#publishingHouse-visual').text(publishingHouse);
+        });
+
+        $('#price').change(function () {
+            var price = $(this).val();
+            $('#price-visual').text(price + 'лв');
+        });
+    </script>
+
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

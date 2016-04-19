@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "Регистрация";
 }
-
+<br />
 <h2>@ViewBag.Title</h2>
 
 <div class="row">
@@ -11,7 +11,7 @@
         @Html.AntiForgeryToken()
             <hr />
             @Html.ValidationSummary("", new { @class = "text-danger" })
-            <div class="col-md-10">
+            <div class="col-md-12" style="background-image: url(http://i63.tinypic.com/2jbp8w0.png); background-size: 100%;">
                 <div class="form-group">
                     @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
                     <div class="col-md-10">

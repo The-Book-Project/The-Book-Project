@@ -15,7 +15,7 @@
     using Microsoft.Owin.Security;
 
     using ViewModels.Account;
-
+    using System.ComponentModel.DataAnnotations;
     [Authorize]
     public class AccountController : BaseController
     {

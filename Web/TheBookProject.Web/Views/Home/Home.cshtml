@@ -1,14 +1,10 @@
-﻿@model TheBookProject.Web.ViewModels.Home.HomeIndexViewModel
+﻿@model TheBookProject.Web.ViewModels.Home.HomeViewModel
 
 <div class="row">
-    <br/>
-    <br />
-    <div class="col-md-12 jumbotron" style="background-image: url(http://3.bp.blogspot.com/-vUn2cmUl2uc/Vb5wYH4W-SI/AAAAAAAACvk/WEsjBCsO7VE/s1128/Fantasy%2Bwallpaper%2Bpillars%2Bof%2Bdestiny.jpg); background-size: 100%;">
-        <div class="col-md-6">
-        </div>
-        <div class="col-md-6">
-            <h1 style="font-size: 70px; font-family:'Charlemagne Std'; color: white; text-align:right">
-                The <br /> Book<br />  Project
+    <div class="col-md-12 jumbotron" style="background-image: url(http://i66.tinypic.com/2mgkoas.png); background-size: 100%; border-top-left-radius: 0px; border-top-right-radius: 0px;">
+        <div class="col-md-12 text-center" id="home-image">
+            <h1 style="font-size: 70px; font-family:Constantia; color: white; font-weight: bolder; text-shadow: #EEEE00 0 0 10px;">
+                The Book Project
             </h1>
         </div>
     </div>
@@ -22,7 +18,7 @@
         <div class="panel panel-default text-center panel-home-outside">
             <div class="panel-heading panel-home">
                 <h1 style="font-size: 55px; font-weight:bold;">
-                    45
+                    @Model.Books
                 </h1>
                 <h4>Книги за купуване</h4>
             </div>
@@ -32,7 +28,7 @@
         <div class="panel panel-default text-center panel-home-outside">
             <div class="panel-heading panel-home">
                 <h1 style="font-size: 55px; font-weight:bold;">
-                    3
+                    @Model.Users
                 </h1>
                 <h4>Регистристрани потребителя</h4>
             </div>

@@ -6,10 +6,10 @@
     @Html.AntiForgeryToken()
 
     <ul class="nav navbar-nav navbar-right">
-        <li>
+        <li class="link-advanced">
             @Html.ActionLink("Здравей " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: new { area = string.Empty }, htmlAttributes: new { title = "Manage" })
         </li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+        <li class="link-advanced"><a href="javascript:document.getElementById('logoutForm').submit()">Изход</a></li>
     </ul>
     }
 }

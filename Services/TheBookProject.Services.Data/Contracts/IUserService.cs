@@ -8,6 +8,8 @@
     {
         IQueryable<User> AllUsers();
 
+        int AllRegisteredUsers();
+
         IQueryable<User> AllUsersWithDeleted();
 
         User GetById(object id);

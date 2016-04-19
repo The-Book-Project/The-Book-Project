@@ -20,6 +20,11 @@
             return this.users.All();
         }
 
+        public int AllRegisteredUsers()
+        {
+            return this.users.All().Count();
+        }
+
         public IQueryable<User> AllUsersWithDeleted()
         {
             return this.users.AllWithDeleted();

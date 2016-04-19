@@ -2,6 +2,10 @@
     padding-top: 50px;
 }
 
+#home-image {
+    padding-bottom: 200px;
+}
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 35px;
@@ -86,4 +90,20 @@ textarea {
     margin-left: 15px !important;
     width: 279px;
     height: 37px;
+}
+
+#title-visual {
+    color: dodgerblue;
+    font-size: 20px;
+    font-family: Constantia;
+}
+
+#price-visual {
+    color: white;
+    font-weight: bold;
+}
+
+#publishingHouse-visual {
+    color: white;
+    font-weight: bold;
 }
